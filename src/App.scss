@@ -1,0 +1,29 @@
+/* Define primary color */
+:root {
+  --primary-color: #35a4ae;
+}
+
+/* Import animate.css */
+@import url('animate.css');
+
+/* Define custom font faces */
+@font-face {
+  font-family: 'Times New Roman', Times, serif;
+  src: url('./assets/fonts/times-new-roman.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'CoolveticaRg-Regular';
+  src: url('./assets/fonts/CoolveticaRg-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('./assets/fonts/helvetica-neu.ttf') format('truetype');
+}
+
+/* Apply custom font to input and textarea */
+input,
+textarea {
+  font-family: 'Times New Roman', Times, serif;
+}

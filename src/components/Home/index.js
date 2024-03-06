@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import './index.scss'
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import backgroundVideo from '../../assets/videos/Java_developer.mp4';
 import AnimatedLetters from "../AnimatedLetters";
 import ProfilePic from "../../assets/images/f1.JPG"
 
 const Home = () =>{
 
-    const [letterClass, setLetterClass] = useState('text-animate')
+    const [letterClass] = useState('text-animate')
     const nameArray = [' ', 'A', 'd', 'i', 't', 'y', 'a', ' ', 'R', 'a', 'j']
     const profession = ['S', 'o', 'f','t','w', 'a', 'r', 'e', ' ', 'D', 'e', 'v', 'e', 'l', 'o', 'p', 'e', 'r']
 

@@ -1,4 +1,3 @@
-<h1>Portfolio</h1>
+# React + Vite
 
-<h2>Description</h2>
-Welcome to my Portfolio! 
+Welcome to my Portfolio!

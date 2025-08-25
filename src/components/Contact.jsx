@@ -5,6 +5,7 @@ import { styles } from '../styles';
 import { EarthCanvas } from './canvas';
 import { SectionWrapper } from '../hoc';
 import { slideIn } from '../utils/motion';
+import githubIcon from '../assets/github-icon.png';
 
 // service_h9h6gxb
 //template_rgqve6i
@@ -42,7 +43,7 @@ const Contact = () => {
     setLoading(true);
 
     emailjs.send(
-      'service_h9h6gxb', 
+      'service_k2am6ek', 
       'template_rgqve6i',
       {
         from_name: form.name,
@@ -79,7 +80,15 @@ const Contact = () => {
       >
         <p className={styles.sectionSubText}>Get In Touch</p>
         <h3 className={styles.sectionHeadText}>Contact</h3>
-
+        <a
+          href="https://github.com/adityaraj-2703"
+        >
+          <img
+            src={githubIcon}  // or "/github-icon.png" if you put it in public
+            alt="GitHub"
+            className="w-10 h-10 inline-block invert cursor-pointer"
+          />
+        </a>
         <form
           ref={formRef}
           onSubmit={handleSubmit}
@@ -126,6 +135,7 @@ const Contact = () => {
           > 
             {loading?'Sending':'Send'}
           </button>
+          
         </form>
       </motion.div>
       <motion.div

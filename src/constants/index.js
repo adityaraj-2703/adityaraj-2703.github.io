@@ -46,6 +46,10 @@ import {
   
   const services = [
     {
+      title: "React Developer",
+      icon: mobile,
+    },
+    {
       title: "Backend Developer",
       icon: backend,
     },
@@ -57,11 +61,6 @@ import {
       title: "Web Developer",
       icon: web,
     },
-    {
-      title: "React Developer",
-      icon: mobile,
-    },
-    
     
   ];
   
@@ -123,7 +122,7 @@ import {
   
   const experiences = [
     {
-      title: "Senior Engineer - Product and Platform Engineering",
+      title: "Senior Software Engineer - Product and Platform Engineering",
       company_name: "Altimetrik",
       icon: altimetrik,
       iconBg: "#383E56",
@@ -136,7 +135,7 @@ import {
       ],
     },
     {
-      title: "Senior Systems Engineer",
+      title: "Senior Software Engineer",
       company_name: "Infosys",
       icon: infosys,
       iconBg: "#E6DEDD",
@@ -149,7 +148,7 @@ import {
       ],
     },
     {
-      title: "Application Administrator",
+      title: "Application Developer",
       company_name: "Ipsoft Technologies",
       icon: ipsoft,
       iconBg: "#383E56",

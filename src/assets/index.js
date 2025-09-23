@@ -33,6 +33,7 @@ import bnymellon from "./company/BNYMellon.png";
 import cloud_computing from "./cloud_computing_project.png";
 import springboot_project from "./springboot_project.png";
 import aed_project from "./aed_project.png";
+import mercor from "./company/mercor.png";
 
 export {
   logo,
@@ -61,6 +62,7 @@ export {
   tailwind,
   typescript,
   threejs,
+  mercor,
   altimetrik,
   infosys,
   ipsoft,

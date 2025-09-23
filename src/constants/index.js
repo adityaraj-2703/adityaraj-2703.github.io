@@ -19,6 +19,7 @@ import {
     nodejs,
     git,
     docker,
+    mercor,
     altimetrik,
     infosys,
     ipsoft,
@@ -121,6 +122,18 @@ import {
   ];
   
   const experiences = [
+    {
+      title: "Software Engineer",
+      company_name: "Mercor",
+      icon: mercor,
+      iconBg: "#383E56",
+      date: "October 2024 - Present",
+      points: [
+        "Built core pages with React/Next.js for 15K+ weekly users",
+        "Launched Stripe-powered payments page reducing discrepancies",
+        "Audited 500+ Python contributions and added 120+ Jest/Cypress tests for reliability",
+      ],
+    },
     {
       title: "Senior Software Engineer - Product and Platform Engineering",
       company_name: "Altimetrik",

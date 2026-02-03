@@ -47,7 +47,7 @@ import {
   
   const services = [
     {
-      title: "React Developer",
+      title: "Frontend Developer",
       icon: mobile,
     },
     {
@@ -129,9 +129,9 @@ import {
       iconBg: "#383E56",
       date: "October 2024 - Present",
       points: [
-        "Built core pages with React/Next.js for 15K+ weekly users",
-        "Launched Stripe-powered payments page reducing discrepancies",
-        "Audited 500+ Python contributions and added 120+ Jest/Cypress tests for reliability",
+        "Built core user-facing pages using Angular (v12+) and React for 15K+ weekly users within an Nx-based micro-frontend architecture",
+        "Launched Angular/React Stripe-powered payments page, reducing discrepancies and improving transaction reliability",
+        "Audited 500+ Angular, Java, Python contributions and added 120+ Jasmine/Jest/Cypress tests to improve frontend and service reliability",
       ],
     },
     {

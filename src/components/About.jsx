@@ -1,36 +1,21 @@
-import React from 'react'
-import Tilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
 
 import { styles } from '../styles';
-import { services } from '../constants';
+import { services, stats } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 import { SectionWrapper } from '../hoc';
 
-const ServiceCard = ({index, title, icon}) =>{
-  return(
-    <p>
-      <Tilt className="xs:w-[250px] w-full">
-        <motion.div
-          variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-          className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
-        >
-          <div options={{
-            max:45,
-            scale:1,
-            speed:450
-          }}
-            className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] 
-            flex justify-evenly items-center flex-col"
-          >
-            <img src={icon} alt={title} className="w-16 h-16 object-contain"/>
-            <h3 className="text-white text-[20px] font-bold text-center">{title}</h3>
-          </div>
-        </motion.div>
-      </Tilt>
-    </p>
-  )
-}
+const ServiceCard = ({ index, title, icon }) => (
+  <motion.div
+    variants={fadeIn('right', 'spring', 0.2 * index, 0.7)}
+    className="w-full rounded-[24px] border border-white/10 bg-slate-900/60 p-[1px] shadow-lg shadow-slate-950/30"
+  >
+    <div className="flex min-h-[220px] flex-col items-center justify-center rounded-[23px] bg-slate-900/90 px-8 py-6 text-center">
+      <img src={icon} alt={title} className="mb-5 h-14 w-14 object-contain" />
+      <h3 className="text-xl font-semibold text-white">{title}</h3>
+    </div>
+  </motion.div>
+);
 
 const About = () => {
   return (
@@ -39,22 +24,23 @@ const About = () => {
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview</h2>
       </motion.div>
+
       <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        variants={fadeIn('', '', 0.1, 1)}
+        className="mt-4 max-w-3xl text-[17px] leading-[30px] text-slate-300"
       >
-        I am a skilled software engineer 
-        with extensive experience in leading cross-functional teams, 
-        developing robust web applications using Java, ReactJS, and AWS, 
-        and optimizing system efficiency and scalability across various platforms.
+        I’m a software engineer who enjoys turning complicated business requirements into reliable digital experiences.
+        From Java and React applications to AWS-powered platform work, I focus on building systems that are scalable,
+        maintainable, and useful to real users.
       </motion.p>
-      <div className="mt-20 flex flex-wrap gap-10">
-        {services.map((service,index) => (
-          <ServiceCard key={service.title} index={index} {...service}/>
+
+      <div className="mt-20 grid gap-10 md:grid-cols-2 xl:grid-cols-4">
+        {services.map((service, index) => (
+          <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default SectionWrapper(About,"about")
+export default SectionWrapper(About, 'about');

@@ -1,94 +1,70 @@
-import Tilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
-import { github } from '../assets'
+import { github } from '../assets';
 import { SectionWrapper } from '../hoc';
 import { projects } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 
-const ProjectCard = ({index, name, description, tags, image, source_code_link}) => {
+const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
   return (
-    <motion.div variants={fadeIn("up","spring",index*0.5,0.75)}>
-      <Tilt
-        options={{
-          max:45,
-          scale:1,
-          speed: 450
-        }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
-      >
-        <div className="relative w-full h-[230px]">
-          <img
-            src={image}
-            alt={name}
-            className="w-full h-full object-cover rounded-2xl"
-          />
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div
-              onClick={() => window.open
-                (source_code_link,"_blank")
-              }
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+    <motion.div variants={fadeIn('up', 'spring', index * 0.5, 0.75)} className="w-full max-w-[360px]">
+      <div className="overflow-hidden rounded-[24px] border border-white/10 bg-slate-900/70 p-5 shadow-lg shadow-black/20">
+        <div className="relative h-[230px] overflow-hidden rounded-2xl">
+          <img src={image} alt={name} className="h-full w-full object-cover" />
+          <div className="absolute inset-0 flex justify-end p-3">
+            <button
+              type="button"
+              onClick={() => window.open(source_code_link, '_blank', 'noopener,noreferrer')}
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-950/80 transition hover:scale-105"
+              aria-label={`Open ${name} project`}
             >
-              <img
-                src={github}
-                alt="github"
-                className="w-1/2 h-1/2 object-contain "
-              />
-              
-            </div>
-
+              <img src={github} alt="github" className="h-1/2 w-1/2 object-contain" />
+            </button>
           </div>
         </div>
+
         <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+          <h3 className="text-2xl font-bold text-white">{name}</h3>
+          <p className="mt-2 text-[14px] leading-6 text-slate-300">{description}</p>
         </div>
+
         <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag) =>(
-            <p
-            key={tag.name}
-            className={`text-[14px] ${tag.color}`}
-            >
+          {tags.map((tag) => (
+            <span key={tag.name} className={`text-[14px] ${tag.color}`}>
               #{tag.name}
-            </p>
+            </span>
           ))}
         </div>
-      </Tilt>
+      </div>
     </motion.div>
-  )
-}
+  );
+};
 
 const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>MY WORK</p>
+        <p className={styles.sectionSubText}>My work</p>
         <h2 className={styles.sectionHeadText}>Projects</h2>
       </motion.div>
 
       <div className="w-full flex">
         <motion.p
-          variants={fadeIn("","",0.1,1)}
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
+          variants={fadeIn('', '', 0.1, 1)}
+          className="mt-3 max-w-3xl text-[17px] leading-[30px] text-slate-300"
         >
-          These projects showcase my skills and experience through real-world examples, 
-          with brief descriptions, links to code repositories. 
-          They reflect my ability to solve complex problems, work with various technologies, 
-          and manage projects efficiently.
+          These projects highlight how I approach systems thinking, product delivery, and platform engineering in real-world scenarios.
+          Each one focuses on business value, maintainability, and measurable outcomes.
         </motion.p>
       </div>
+
       <div className="mt-20 flex flex-wrap gap-7">
-        {projects.map((project,index) => (
-          <ProjectCard 
-            key={`project-${index}`}
-            index={index}
-            {...project}
-          />
+        {projects.map((project, index) => (
+          <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default SectionWrapper(Works,"");
+export default SectionWrapper(Works, 'work');

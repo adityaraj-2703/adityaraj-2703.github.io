@@ -1,69 +1,65 @@
-import { React, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { styles } from "../styles";
 import { navLinks } from '../constants';
 import { logo, menu, close } from "../assets";
+import { trackEvent } from '../utils/analytics';
 
 const Navbar = () => {
   const [active, setActive] = useState("");
-  const [toggle,setToggle] = useState(false);
+  const [toggle, setToggle] = useState(false);
+
+  const handleNavClick = (link) => {
+    setActive(link.title);
+    setToggle(false);
+    trackEvent('nav_click', { section: link.id });
+  };
 
   return (
-    <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}>
+    <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary/80 backdrop-blur-sm`}>
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-        <Link
-          to="/"
+        <a
+          href="#home"
           className="flex items-center gap-2"
           onClick={() => {
-            setActive = ("");
+            setActive('');
             window.scrollTo(0, 0);
+            trackEvent('brand_click');
           }}
         >
           <img src={logo} alt='logo' className="w-9 h-9 object-contain" />
           <p className="text-white text-[18px] font-bold cursor-pointer flex">
             Aditya Raj &nbsp;
-            <span className="sm:block hidden"> | Software Engineer</span>
+            <span className="sm:block hidden text-secondary"> | Software Engineer</span>
           </p>
-        </Link>
+        </a>
+
         <ul className="list-none hidden sm:flex flex-row gap-10">
-          {navLinks.map((link)=> (
+          {navLinks.map((link) => (
             <li
-            key={link.id}
-            className={`${
-              active===link.title
-              ? "text-white"
-              : "text-secondary"
-            } hover:text-white text-[18px] font-medium cursor-pointer`}
-            onClick={() => setActive(link.title)}>
-              
+              key={link.id}
+              className={`${active === link.title ? 'text-white' : 'text-secondary'} hover:text-white text-[18px] font-medium cursor-pointer`}
+              onClick={() => handleNavClick(link)}
+            >
               <a href={`#${link.id}`}>{link.title}</a>
             </li>
           ))}
         </ul>
+
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <img
-            src={toggle? close: menu}
+            src={toggle ? close : menu}
             alt="menu"
             className="w-[28px] h-[28px] object-contain cursor-pointer"
-            onClick={()=>setToggle(!toggle)}
+            onClick={() => setToggle(!toggle)}
           />
-          <div className={`${!toggle ? 'hidden' : 'flex'} 
-          p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px]
-          z-10 rounded-x1`}>
+          <div className={`${!toggle ? 'hidden' : 'flex'} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[180px] z-10 rounded-2xl`}>
             <ul className="list-none flex justify-end items-start flex-col gap-4">
-              {navLinks.map((link)=> (
+              {navLinks.map((link) => (
                 <li
-                key={link.id}
-                className={`${
-                  active===link.title
-                  ? "text-white"
-                  : "text-secondary"
-                } font-poppins font-medium cursor-pointer text-[16px]`}
-                onClick={() => {
-                  setToggle(!toggle)
-                  setActive(link.title)
-                }}>
-                  
+                  key={link.id}
+                  className={`${active === link.title ? 'text-white' : 'text-secondary'} font-medium cursor-pointer text-[16px]`}
+                  onClick={() => handleNavClick(link)}
+                >
                   <a href={`#${link.id}`}>{link.title}</a>
                 </li>
               ))}
@@ -71,9 +67,8 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

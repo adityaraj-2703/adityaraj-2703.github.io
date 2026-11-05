@@ -1,6 +1,8 @@
 import logo from "./logo.svg";
 import backend from "./backend.png";
 import creator from "./creator.png";
+import photo from "./photo.png";
+import portraitProfessional from "./portrait-professional.svg";
 import cloud_developer from "./cloud_developer.png";
 import mobile from "./mobile.png";
 import web from "./web.png";
@@ -34,12 +36,15 @@ import cloud_computing from "./cloud_computing_project.png";
 import springboot_project from "./springboot_project.png";
 import aed_project from "./aed_project.png";
 import mercor from "./company/mercor.png";
+import prac from "./prac.png";
 
 export {
   logo,
   backend,
   cloud_developer,
   creator,
+  photo,
+  portraitProfessional,
   mobile,
   web,
   github,
@@ -63,6 +68,7 @@ export {
   typescript,
   threejs,
   mercor,
+  prac,
   altimetrik,
   infosys,
   ipsoft,

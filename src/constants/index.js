@@ -20,6 +20,7 @@ import {
     git,
     docker,
     mercor,
+    prac,
     altimetrik,
     infosys,
     ipsoft,
@@ -44,25 +45,31 @@ import {
       title: "Contact",
     },
   ];
+
+  export const stats = [
+    { value: "6+", label: "Years as a software engineer" },
+    { value: "45%", label: "Avg. latency reduction" },
+    { value: "7", label: "Products and enhancements delivered" },
+    { value: "Boston", label: "Based in Massachusetts" },
+  ];
   
   const services = [
     {
-      title: "Frontend Developer",
+      title: "Software Engineer",
       icon: mobile,
     },
     {
-      title: "Backend Developer",
+      title: "Distributed Systems Engineer",
       icon: backend,
     },
     {
-      title: "Cloud Engineer",
+      title: "Platform Engineer",
       icon: cloud_developer,
     },
     {
-      title: "Web Developer",
+      title: "Cloud & Reliability Engineer",
       icon: web,
     },
-    
   ];
   
   const technologies = [
@@ -124,14 +131,25 @@ import {
   const experiences = [
     {
       title: "Software Engineer",
+      company_name: "Plymouth Rock Assurance",
+      icon: prac,
+      iconBg: "#1d4ed8",
+      date: "March 2026 - Present",
+      points: [
+        "Built a Java/Spring Boot forms-generation service resolving policy state into versioned, schema-driven templates and rendering 12+ document types on plan finalization.",
+        "Diagnosed and resolved rating-engine errors by correlating premium-calculation metrics with CloudWatch logs and alarms to isolate root causes, partnering with actuarial, product, and platform teams to deploy fixes.",
+      ],
+    },
+    {
+      title: "Software Engineer",
       company_name: "Mercor",
       icon: mercor,
       iconBg: "#383E56",
-      date: "October 2024 - Present",
+      date: "April 2025 - February 2026",
       points: [
-        "Built core user-facing pages using Angular (v12+) and React for 15K+ weekly users within an Nx-based micro-frontend architecture",
-        "Launched Angular/React Stripe-powered payments page, reducing discrepancies and improving transaction reliability",
-        "Audited 500+ Angular, Java, Python contributions and added 120+ Jasmine/Jest/Cypress tests to improve frontend and service reliability",
+        "Architected React and Node.js dashboard serving 30K+ weekly users by designing scalable REST APIs, optimizing MongoDB access patterns, and validating functionality through 180+ Jest tests.",
+        "Engineered Generative AI workflows using Java, LLM APIs, and Model Context Protocol (MCP) to orchestrate autonomous agents and process thousands of evaluations weekly.",
+        "Instrumented high-traffic Node.js services with structured JSON logs, correlation identifiers, and request-level diagnostics, cutting incident triage time by 80%.",
       ],
     },
     {

@@ -4,13 +4,44 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: dark;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
-  color-scheme: dark;
+}
+
+html {
+  background: #050816;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(251, 191, 36, 0.12), transparent 25%),
+    #050816;
+  color: #f8fafc;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+p,
+a,
+button,
+input,
+textarea {
+  font-family: "Poppins", sans-serif;
+}
+
+::selection {
+  background: rgba(250, 204, 21, 0.35);
 }
 
 .hash-span {
